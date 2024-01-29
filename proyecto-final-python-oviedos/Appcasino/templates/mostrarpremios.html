@@ -1,0 +1,18 @@
+{% extends "padre.html" %}
+
+{% block titulo1 %}Acá vemos los
+{% endblock %}
+
+{% block titulo2 %} PREMIOS REGISTRADoS
+
+{% endblock %}
+
+{% block titulo3 %}    
+
+{% for x in premios %}
+
+<p>cajero a cargo:  {{x.cajeron}} --- nombre del usuario: {{x.nombreu}} --- monto: {{x.importe}} --- CVU del usuario: {{x.cvu}}  </p>
+
+ {% endfor %}
+
+{% endblock %}

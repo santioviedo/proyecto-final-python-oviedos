@@ -1,0 +1,18 @@
+{% extends "padre.html" %}
+
+{% block titulo1 %}
+{% endblock %}
+
+{% block titulo2 %} VENTAS REGISTRADAS
+
+{% endblock %}
+
+{% block titulo3 %}    
+
+{% for x in ventas %}
+
+<p>cajero a cargo:  {{x.cajeros}} --- mes de venta: {{x.mes}} --- total de fichas vendidas: {{x.fichas_vendidas}} --- premios acumulados del mes : {{x.premios}}  </p>
+
+ {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        {% load static %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Proyecto Final Coder House</title>
+        
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'Appcasino/css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+        <span class="d-block d-lg-none"></span>
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-0" src="{{user.avatar_set.last.imagen.url}}" alt="..." /></span>
+       
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav">
+                    {% if user.is_authenticated %}
+                    <h3> Hola {{user}}! </h3> 
+                    {% else  %}
+                    <p></p>
+                    {% endif %}  
+
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'inicio' %}">inicio</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'vcajeros' %}">Seccion Cajero</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'vfichas' %}">Seccion fichas</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'vventas' %}">Seccion ventas</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'vpremios' %}">Seccion premios</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#informacion-casino">INFORMACION DEL CASINO</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#beneficios">SOBRE NOSOTROS</a></li>
+
+
+
+                    
+                </ul>
+            </div>
+        </nav>
+        <!-- Page Content-->       
+    
+        <div class="container-fluid p-0">
+            <!-- About-->
+            {% if user.is_authenticated %}
+            <a class="btn btn-primary btn-elevate kt-login__btn-primary" href=" {% url 'cerrarsesion' %} ">cerrar sesion</a> 
+           <br><br>
+           <a class="btn btn-primary btn-elevate kt-login__btn-primary" href=" {% url 'editarusuario' %} ">editar usuario</a> 
+           {% else  %}
+           <br>
+           <a class="btn btn-primary btn-elevate kt-login__btn-primary" href=" {% url 'login' %} ">iniciar sesion</a>
+            <br> <br>  
+            <a class="btn btn-primary btn-elevate kt-login__btn-primary" href=" {% url 'registro' %} ">registrarse</a> 
+           {% endif %}  
+            
+         
+  <section class="resume-section" id="about">
+                <div class="resume-section-content">
+                    <h1 class="mb-0">
+                        {% block titulo1 %} {% endblock %}
+                        <span class="text-primary"> {% block titulo2 %} {% endblock %}🔱</span> 
+                    </h1>
+                    <div class="subheading mb-5">
+                        {% block titulo3 %} {% endblock %}    {% block titulo4 %} {% endblock %}                   
+                    </div>
+                    <p class="lead mb-9">{% block texto %} {% endblock %}  </p>
+                    <div class="social-icons">
+                    </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Experience-->
+            <section class="resume-section" id="experience">
+                <div class="resume-section-content">
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0"></h3>
+                            <p> </p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary"></span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div id="informacion-casino" class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                            <div class="flex-grow-1">
+                                <h2 class="mb-4">INFORMACION DEL CASINO</h2>
+                                <div class="subheading mb-3">minimo de carga de $500.
+                                    Retiros una vez al dia desde $3000 hasta $50000 retiros de premio de lunes a viernes en el horario de 14:00 a 20:00. Sabado de 14h:00 a 18:00. atravez de CVU/CBU. Domingo y feriados no se abonan los premios. </div>
+                                <p></p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">cajero base</h3>
+                            <div class="subheading mb-3">El cajero base gana un 15% de las fichas que venda, los premios que les gane lo respalda el administrador a cargo, este es el nivel inicial para un primer cajero.</div>
+                            <p></p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary"></span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Cajero Recupero</h3>
+                            <div class="subheading mb-3">El cajero recupero gana un 40% de las fichas que vende, los premios tambien son respaldados por el administrador a cargo, con la difernecia que cunado al cajero le retiren un premio tendra que vender esas fichas y darle el 100% de la ganancia al administrador, una vez que no tenga recupero vuelve a ocbrar el 40% de lo vendido.</div>
+                            <p></p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary"></span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">ADMINISTRADOR</h3>
+                            <div class="subheading mb-3">El administrador gana el 60% de las fichas que vende, los premios los respalda el mismo, tiene el poder de contratar nuevos cajeros base y cajeros recupero para que trabajen para el, y el mismo administrador debera hacerse cargo de los premios de sus cajeros y tambien puede contratar otros administradores para que trabajen para el.</div>
+                            <p></p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary"></span></div>
+                    </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Education-->
+            <section class="resume-section" id="education">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">SOBRE NOSOTROS</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div id="beneficios" class="flex-grow-1">
+                            <h3 class="mb-0"></h3>
+                            <div class="subheading mb-3">Somos interesados en incursionar en el mundo de la programación, conocedores de la modalidad y calidad de los cursos que ofrece CODER, cada uno de los integrantes del equipo posee intereses diferentes por un lado, Santiago quien esta evaluando su futuro para iniciar la Facultad respuesta a la carrera de programación y por el otro Diego a quien le interesa conocer sobre la materia para complementar con el mundo de Análisis de Datos.</div>                            <div></div> 
+                            p></p>
+                        </div>                                        
+                                            
+
+                        <div class="flex-shrink-0"><span class="text-primary"></span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0"></h3>
+                            <div class="subheading mb-3"></div>
+                            <p></p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary"></span></div>
+                    </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Skills-->
+           
+            <hr class="m-0" />
+            <!-- Interests-->
+         
+            <hr class="m-0" />
+            <!-- Awards-->
+          

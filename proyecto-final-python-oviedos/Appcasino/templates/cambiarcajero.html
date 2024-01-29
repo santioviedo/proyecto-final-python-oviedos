@@ -1,0 +1,29 @@
+{% extends "padre.html" %}
+
+{% block titulo1 %}Acá vemos los 
+{% endblock %}
+
+{% block titulo2 %}CAJEROS REGISTRADOS
+
+{% endblock %}
+
+{% block titulo3 %}    
+
+{% for x in cajeros %}
+
+<p>NOMBRE:  {{x.nombre}} --- APELLIDO: {{x.apellido}} --- DNI: {{x.dni}}   </p>
+
+
+
+<button>
+    <a href=" {% url 'actualizarcajero' x.nombre%} "> Actualiza</a>
+</button>
+
+<button>
+
+<a href=" {% url 'eliminarcajero' x.nombre%} "> Eliminar</a>
+</button>
+
+ {% endfor %}
+
+{% endblock %}

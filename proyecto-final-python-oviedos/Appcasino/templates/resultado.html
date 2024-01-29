@@ -1,0 +1,18 @@
+{% extends "padre.html" %}
+
+{% block titulo1 %}Casino 
+{% endblock %}
+
+{% block titulo2 %}Zeus
+{% endblock %}
+
+{% block texto %} 
+
+{% for nombre in nombre %}
+<p>Nombre: {{nombre.nombre}} </p>
+<p>Apellido: {{nombre.apellido}} </p>
+<p>DNI: {{nombre.dni}} </p>
+<p>Localidad: {{nombre.localidad}} </p>
+<br>
+{% endfor %}
+{% endblock %}

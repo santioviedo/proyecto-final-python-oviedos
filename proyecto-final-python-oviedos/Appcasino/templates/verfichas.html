@@ -1,0 +1,42 @@
+{% extends "padre.html" %}
+
+{% block titulo1 %}Aca vemos y cargamos
+{% endblock %}
+
+{% block titulo2 %}Fichas
+
+{% endblock %}
+
+{% block titulo3 %}    
+
+<style>
+    .btn.btn-primary.btn-elevate.kt-login__btn-primary {font-size: 16px;}
+</style>
+<a class="btn btn-primary btn-elevate kt-login__btn-primary" href="{% url 'nficha' %}"> "cargar fichas"</a>
+
+{% endblock %}
+
+{% block titulo4 %}
+
+<style>
+    .btn.btn-primary.btn-elevate.kt-login__btn-primary {font-size: 16px;}
+</style>
+<a class="btn btn-primary btn-elevate kt-login__btn-primary" href="{% url 'mfichas' %}"> "ver historial de fichas"</a>
+
+{% endblock %} 
+
+
+{% block texto %} 
+<form action="/resultadonombre/" method="GET">
+    Buscar Cajero Registrados: <input type="text" name="nombres">
+    <input type="submit" value="Buscar"> 
+</form>
+
+{% for nombre in nombre %}
+<p>Nombre: {{nombre.nombre}} </p>
+<p>Apellido: {{nombre.apellido}} </p>
+<p>DNI: {{nombre.dni}} </p>
+<p>Localidad: {{nombre.localidad}} </p>
+<br>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "padre.html" %}
+
+{% block titulo1 %}Acá vemos las
+{% endblock %}
+
+{% block titulo2 %} FICHAS REGISTRADAS
+
+{% endblock %}
+
+{% block titulo3 %}    
+
+{% for x in fichas %}
+
+<p>cajero:  {{x.cajero}} --- cantidad: {{x.cantidad}} --- monto: {{x.precio}}   </p>
+
+ {% endfor %}
+
+{% endblock %}

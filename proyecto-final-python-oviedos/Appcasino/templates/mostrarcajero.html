@@ -1,0 +1,18 @@
+{% extends "padre.html" %}
+
+{% block titulo1 %}Acá vemos los 
+{% endblock %}
+
+{% block titulo2 %}CAJEROS REGISTRADOS
+
+{% endblock %}
+
+{% block titulo3 %}    
+
+{% for x in cajeros %}
+
+<p>NOMBRE:  {{x.nombre}} --- APELLIDO: {{x.apellido}} --- DNI: {{x.dni}}   </p>
+
+ {% endfor %}
+
+{% endblock %}

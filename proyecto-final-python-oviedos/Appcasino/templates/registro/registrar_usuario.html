@@ -1,0 +1,24 @@
+{% extends "padre.html" %}
+
+
+{% block titulo1 %}Crear
+{% endblock %}
+
+{% block titulo2 %}Usuario
+{% endblock %}
+
+{% block texto %} 
+
+
+<form action="" method="POST">{% csrf_token %}
+{{formu}}
+<input type="submit" value="Registrarse"> 
+</form>
+
+{% for nombre in nombre %}
+
+{{mensaje}}
+
+<br>
+{% endfor %}
+{% endblock %}

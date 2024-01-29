@@ -1,0 +1,24 @@
+{% extends "padre.html" %}
+
+{% block titulo1 %}Casino 
+{% endblock %}
+
+{% block titulo2 %}Zeus
+{% endblock %}
+
+{% block texto %} 
+en esta pagina web podemos agregar nuevos cajeros base, cajeros recupero, y administradores tambien puedes tener una estadistica de las fichas que vendiste y los premios pagados 
+
+<form action="/resultadonombre/" method="GET">
+    Ingresa el Nombre del Cajero: <input type="text" name="nombres">
+    <input type="submit" value="Buscar"> 
+</form>
+
+{% for nombre in nombre %}
+<p>Nombre: {{nombre.nombre}} </p>
+<p>Apellido: {{nombre.apellido}} </p>
+<p>DNI: {{nombre.dni}} </p>
+<p>Localidad: {{nombre.localidad}} </p>
+<br>
+{% endfor %}
+{% endblock %}
